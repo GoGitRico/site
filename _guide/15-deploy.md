@@ -29,4 +29,17 @@ The commands are:
 <span class="command">convox ssl update web:443 cert-1234567890</span>
 </pre>
 
+## Up Next
+
 Let's start by [installing a Rack](/guide/rack/).
+
+<section>
+    <div id="container_buttons" align="right">
+        <p>
+            <a href="/guide/rack" class="a_demo_four">
+                Installing a Rack
+            </a>
+        </p>
+    </div>
+</section>
+
