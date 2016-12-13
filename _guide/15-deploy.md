@@ -33,13 +33,19 @@ The commands are:
 
 Let's start by [installing a Rack](/guide/rack/).
 
+[//]: # (Below is my modified Guide Next Button)
+
 <section>
-    <div id="container_buttons" align="right">
-        <p>
-            <a href="/guide/rack" class="a_demo_four">
-                Installing a Rack
-            </a>
-        </p>
-    </div>
+<div id="container_buttons" align="right">
+
+  <section>
+    <button class="is-next-button">
+	<a href="/guide/rack"><div class="link">
+    Installing a Rack</div>
+    <div class="arrow">&#8680;</div></a>
+    </button>
+  </section>
+
+</div>
 </section>
 

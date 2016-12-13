@@ -1,145 +1,75 @@
 @charset "UTF-8";
 /* CSS Document */
 /*
-DEMO 4
-http://tympanus.net/codrops/2012/01/11/css-buttons-with-pseudo-elements/
+Next Button Is RICO
 */
 
-.a_demo_four {
-    background-color:#3bb3e0;
-    font-family: 'Open Sans', sans-serif;
-    font-size:12px;
-    text-decoration:none;
-    color:#orange;
-    position:relative;
-    padding:10px 20px;
-    padding-right:50px;
-    background-image: linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-    background-image: -o-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-    background-image: -moz-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-    background-image: -webkit-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-    background-image: -ms-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-    background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0, rgb(44,160,202)),
-    color-stop(1, rgb(62,184,229))
-    );
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
-    -moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
-    -o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
-    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
-}
+/* section containing the next button */
 
-.a_demo_four:active {
-    top:3px;
-    background-image: linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
-    background-image: -o-linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
-    background-image: -moz-linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
-    background-image: -webkit-linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
-    background-image: -ms-linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
-    background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0, rgb(62,184,229)),
-    color-stop(1, rgb(44,160,202))
-    );
-    -webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
-    -moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
-    -o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
-    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
-}
-
-.a_demo_four::before {
-    background-color:#2591b4;
-    background-image:url(../images/right_arrow.png);
-    background-repeat:no-repeat;
-    background-position:center center;
-    content:"";
-    width:20px;
-    height:20px;
-    position:absolute;
-    right:15px;
-    top:50%;
-    margin-top:-9px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-    -webkit-box-shadow: inset 0px 1px 0px #052756, 0px 1px 0px #60c9f0;
-    -moz-box-shadow: inset 0px 1px 0px #052756, 0px 1px 0px #60c9f0;
-    -o-box-shadow: inset 0px 1px 0px #052756, 0px 1px 0px #60c9f0;
-    box-shadow: inset 0px 1px 0px #052756, 0px 1px 0px #60c9f0;
-}
-
-.a_demo_four:active::before {
-    top:50%;
-    margin-top:-12px;
-    -webkit-box-shadow: inset 0px 1px 0px #60c9f0, 0px 3px 0px #0e3871, 0px 6px 3px #1a80a6;
-    -moz-box-shadow: inset 0px 1px 0px #60c9f0, 0px 3px 0px #0e3871, 0px 6px 3px #1a80a6;
-    -o-box-shadow: inset 0px 1px 0px #60c9f0, 0px 3px 0px #0e3871, 0px 6px 3px #1a80a6;
-    box-shadow: inset 0px 1px 0px #60c9f0, 0px 3px 0px #0e3871, 0px 6px 3px #1a80a6;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.codrops-demos{
-    text-align:right;
-	display: block;
-	line-height: 10px;
-	padding: 10px 0px;
-}
-.codrops-demos a{
-    display: inline-block;
-	margin: 0px 4px;
-	padding: 0px 4px;
-	color: #fff;
-	line-height: 20px;	
-	font-style: italic;
-	font-size: 13px;
-	border-radius: 3px;
-	background: rgba(41,77,95,0.1);
-	-webkit-transition: all 0.2s linear;
-	-moz-transition: all 0.2s linear;
-	-o-transition: all 0.2s linear;
-	-ms-transition: all 0.2s linear;
-	transition: all 0.2s linear;
-}
-.codrops-demos a:hover{
-	background: rgba(41,77,95,0.3);
-}
-.codrops-demos a.current,
-.codrops-demos a.current:hover{
-	background: rgba(41,77,95,0.3);
-}
-
-#container_buttons{
-	/*width: 900px;*/
+#container_buttons {
 	margin: 0 auto;
-	background: rgba(255,255,255,0.3);
+	background: rgba(255,255,255,0.3); /* Convox Orange */
     text-align:right;
-	padding: 20px 20px 00px;
+	padding: 20px 20px;
 	border-radius: 10px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,0.09) inset;
+    cursor: alias;
+}
+/* the button itself -- I debated a gradient. I think is too busy*/
+.is-next-button {
+	-webkit-border-radius: 11px;
+	-moz-border-radius: 11px;
+	border-radius: 11px;
+	margin: 11px; padding:7px;
+	border: 1px solid rgba(0,0,0,0.4) ;
+	background: rgb(254,191,4);
+	/* background: -moz-linear-gradient(top,  rgba(255,214,94,1) 0%, rgba(254,191,4,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,214,94,1)), color-stop(100%,rgba(254,191,4,1)));
+	background: -webkit-linear-gradient(top,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%);
+	background: -o-linear-gradient(top,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%);
+	background: linear-gradient(top,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', endColorstr='#febf04',GradientType=0 );
+*/
+}
+/* the button on hover -- hover specific gradient swap if used */
+.is-next-button:hover {
+	background: rgb(254,191,4);
+	/* background: -moz-linear-gradient(top,  rgba(254,191,4,1) 0%, rgba(255,214,94,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,191,4,1)), color-stop(100%,rgba(255,214,94,1)));
+	background: -webkit-linear-gradient(top,  rgba(254,191,4,1) 0%,rgba(255,214,94,1) 100%);
+	background: -o-linear-gradient(top,  rgba(254,191,4,1) 0%,rgba(255,214,94,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(254,191,4,1) 0%,rgba(255,214,94,1) 100%);
+	background: linear-gradient(top,  rgba(254,191,4,1) 0%,rgba(255,214,94,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febf04', endColorstr='#ffd65e',GradientType=0 );
+    */
 }
 
-#container_buttons p{
-	display:block !important;
-	padding-bottom:10px;
+
+
+
+.is-next-button a .link { /* =manually placed= link text for next sectiom */
+    padding:15px; float: left;
+	border-right: 1px solid rgba(255,255,255,0.70);
+    color: rgba(255,255,255, 0.90);
+    font-family: 'Droid Sans', sans-serif;
+    text-decoration: none; 
+    font-weight: 800;
+    font-size:20px;
+	text-transform: uppercase;
+    cursor: alias;
 }
+.is-next-button .arrow { /* directional arrow for next sectiom */
+	padding: 0px 10px; margin:0px;
+	float: left;
+	color: rgba(255,255,255, 0.90);
+	font-weight: 800;
+	font-size: 40px;
+	text-transform: uppercase;	
+	border-left: 1px solid rgba(0,0,0,0.2);
+    cursor: alias;
+}
+.is-next-button a:hover .link { /* For now I'm hovering with Convox Blue */
+    color: rgba(4,83,148, 0.7);
+    text-decoration: none; 
+}
+
