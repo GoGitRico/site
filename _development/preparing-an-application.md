@@ -126,6 +126,6 @@ The `Dockerfile` describes the steps you need to build and run your application.
 
 * `CMD` defines the default command to start application.
 
-For more information on how to write Dockerfiles, see the [Docker user guide](https://docs.docker.com/userguide/dockerimages/#building-an-image-from-a-dockerfile) and the [Dockerfile reference](http://docs.docker.com/reference/builder/).
+For more information on how to write Dockerfiles, see the [Docker user guide](https://docs.docker.com/engine/tutorials/dockerimages/#/building-an-image-from-a-dockerfile) and the [Dockerfile reference](http://docs.docker.com/reference/builder/).
 
 Convox also offers custom Docker configuration as a paid service. To find out more about scheduling and pricing, contact us via the chat icon on the bottom right of your screen.

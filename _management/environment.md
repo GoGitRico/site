@@ -3,6 +3,10 @@ title: "Environment"
 order: 500
 ---
 
+<div class="block-callout block-show-callout type-info" markdown="1">
+This page is about the role of environment variables in containers and applications. For information about environment variables in the context of the Convox CLI, see [CLI environment variables](/docs/cli-environment-variables/).
+</div>
+
 Convox applications are configured using environment variables. Environment management differs depending on whether you are running your applications locally or in the cloud. See the [Local](#local) and [Deployed](#deployed) sections below for details.
 
 ## Local
@@ -29,7 +33,7 @@ services:
       - FOO
 ```
 
-The `environment` section of `docker-compose.yml` plays a couple roles locally:
+The `environment` section of `docker-compose.yml` plays a couple of roles locally:
 
 1. _It serves as a list of required environment variables._ `convox start` will refuse to run your application if it doesn't find values for each of your required env vars in `.env`.
 1. _It allows you to set default values for environment variables._ Values in `.env` will override these defaults.

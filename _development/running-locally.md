@@ -40,6 +40,10 @@ This will read your `docker-compose.yml` and use the information found there to 
 
 To exit `convox start` press `Ctrl+C`.
 
+## Environment
+
+`convox start` will read variables defined in a file called `.env` in the project root directory. For more information, see the [Environment](/docs/environment/#local) documentation.
+
 ## Data persistence
 
 If your app uses a database, you'll find it useful to run a database container locally for development. To persist data for that container between starts, you can use Docker volumes to mount a host directory to the container's data directory. For example, if you're using the `convox/postgres` image, you can persist your data like this:

@@ -43,7 +43,7 @@ This guide presents step-by-step instructions to "Dockerize" any app to build Im
 
 ## How To Use
 
-Start by reading the Introduction on [convox.com](https://convox.com/guide) or in [the open-source GitHub repo](https://github.com/convox/guide).
+Start by reading the Introduction on [convox.com](https://convox.com/guide) or in [the open-source GitHub repo](https://github.com/convox/site/tree/master/_guide).
 
 ## Contributing
 

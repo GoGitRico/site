@@ -113,6 +113,11 @@ header ul.actions li a:hover {
   color: #FFF;
 }
 
+span.mono {
+  font-family: 'Roboto Mono', Monaco, Consolas, monospace;
+  color: #000;
+}
+
 .short-desc {
   display: block;
   font-family: 'Lato', Arial, sans-serif;
@@ -328,6 +333,10 @@ header ul.actions li a:hover {
 .services-inner span.glyphicon {
   font-size: 40px;
   margin-bottom: 10px;
+}
+
+.box span.glyphicon {
+  font-size: 80px;
 }
 
 #features .box {
@@ -859,7 +868,7 @@ h3 {
   padding: 5px 8px;
   font-weight: normal;
   margin-top: 10px;
-  margin-left: 15px;
+  margin-left: 5px;
 }
 
 .navbar-default .navbar-toggle {

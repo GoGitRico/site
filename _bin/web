@@ -5,6 +5,7 @@ nginx &
 echo "DEVELOPMENT: $DEVELOPMENT"
 
 if [ "$DEVELOPMENT" == "true" ]; then
+    export JEKYLL_ENV=development
     $(bundle exec jekyll serve \
         --verbose \
         --incremental \
@@ -13,6 +14,7 @@ if [ "$DEVELOPMENT" == "true" ]; then
         --force_polling \
         --watch) "$@"
 else
+    export JEKYLL_ENV=production
     $(bundle exec jekyll serve \
         -H 0.0.0.0 \
         -P 5000) "$@"

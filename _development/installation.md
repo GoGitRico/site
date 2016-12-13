@@ -24,7 +24,7 @@ Alternatively, on OSX you can also install via Homebrew:
 
     $ brew install convox
 
-**Note for Homebrew users:** You will need to update the CLI by running `convox update`. `brew upgrade convox` will not work.
+**Note for Homebrew users:** You will need to update the CLI by running `convox update`. (As of November 2016, the convox Homebrew package has not yet been set up to support `brew upgrade convox`.)
 
 ## Linux
 
@@ -41,10 +41,23 @@ CentOS users can download the .rpm [here](https://dl.equinox.io/convox/convox/st
 
 # Next steps
 
-After convox has been installed, don't forget to run:
+## Logging in to the CLI
 
-- `convox update`
-- `convox login`
+After installing Convox, you'll need to `convox login`:
+
+    $ convox login console.convox.com
+    Password: <your Console API key>
+    Logged in successfully.
+
+## Updating the CLI
+
+To update the CLI you can run `convox update`:
+
+    $ convox update
+    Updating convox/proxy: OK
+    Updating convox: OK, 20161111173317
+
+## Extras
 
 You can also set up [shell auto-completion features](/docs/cli#shell-autocomplete-support) and [PS1 helpers](/docs/cli#active-rack-command-prompt-helper) for your terminal prompt.
 

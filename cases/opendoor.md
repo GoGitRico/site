@@ -5,7 +5,7 @@ layout: case
 
 ## The Challenge: Creating the definitive price index for real-estate
 
-Fair and accurate pricing of residential real-estate underlies [Opendoor’s]((https://opendoor.com/)) core product. To develop their valuation models, Opendoor’s team of engineers and data scientists are constantly exploring new ideas to accurately estimate housing prices.
+Fair and accurate pricing of residential real-estate underlies [Opendoor’s](https://www.opendoor.com/) core product. To develop their valuation models, Opendoor’s team of engineers and data scientists are constantly exploring new ideas to accurately estimate housing prices.
 
 To support these rapid iterations, their team needs a platform that can deploy complex data science applications with ease and efficiency, and not worry about what platform constraints might get in the way.
 
