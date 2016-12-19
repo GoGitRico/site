@@ -29,23 +29,17 @@ The commands are:
 <span class="command">convox ssl update web:443 cert-1234567890</span>
 </pre>
 
-## Up Next
-
-Let's start by [installing a Rack](/guide/rack/).
+Let’s start by [installing a Rack](/guide/rack/)
 
 [//]: # (Below is my modified Guide Next Button)
 
 <section>
-<div id="container_buttons" align="right">
-
-  <section>
-    <button class="is-next-button">
-	<a href="/guide/rack"><div class="link">
-    Installing a Rack</div>
-    <div class="arrow">&#8680;</div></a>
+<div id="container-next-button">
+    <button class="guide-next-button">
+	<a href="/guide/rack">
+    <span class="next-button-link">Installing a Rack</span>
+    <span class="next-button-arrow">&#8680;</span>
+    </a>
     </button>
-  </section>
-
 </div>
 </section>
-

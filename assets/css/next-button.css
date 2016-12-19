@@ -4,72 +4,53 @@
 Next Button Is RICO
 */
 
-/* section containing the next button */
+/* next button container */
 
-#container_buttons {
-	margin: 0 auto;
-	background: rgba(255,255,255,0.3); /* Convox Orange */
-    text-align:right;
-	padding: 20px 20px;
+#container-next-button {
+	text-align:right;margin: 0 auto;
+	background: rgba(255,255,255,0.3); /* Convox blue */
+	padding: 20px 0px;
 	border-radius: 10px;
     cursor: alias;
 }
-/* the button itself -- I debated a gradient. I think is too busy*/
-.is-next-button {
+
+/* for an =up next= wording above button if desired
+#container-next-button h4 {
+    color: #444444;
+    padding-right:65px;
+} */
+
+/* the next button itself */
+button.guide-next-button {
 	-webkit-border-radius: 11px;
 	-moz-border-radius: 11px;
 	border-radius: 11px;
-	margin: 11px; padding:7px;
-	border: 1px solid rgba(0,0,0,0.4) ;
-	background: rgb(254,191,4);
-	/* background: -moz-linear-gradient(top,  rgba(255,214,94,1) 0%, rgba(254,191,4,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,214,94,1)), color-stop(100%,rgba(254,191,4,1)));
-	background: -webkit-linear-gradient(top,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%);
-	background: -o-linear-gradient(top,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%);
-	background: linear-gradient(top,  rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', endColorstr='#febf04',GradientType=0 );
-*/
-}
-/* the button on hover -- hover specific gradient swap if used */
-.is-next-button:hover {
-	background: rgb(254,191,4);
-	/* background: -moz-linear-gradient(top,  rgba(254,191,4,1) 0%, rgba(255,214,94,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,191,4,1)), color-stop(100%,rgba(255,214,94,1)));
-	background: -webkit-linear-gradient(top,  rgba(254,191,4,1) 0%,rgba(255,214,94,1) 100%);
-	background: -o-linear-gradient(top,  rgba(254,191,4,1) 0%,rgba(255,214,94,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(254,191,4,1) 0%,rgba(255,214,94,1) 100%);
-	background: linear-gradient(top,  rgba(254,191,4,1) 0%,rgba(255,214,94,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febf04', endColorstr='#ffd65e',GradientType=0 );
-    */
+	padding:7px;
+	border: 1px solid rgba(4,83,148, 1);
+	background: rgba(4,83,148, 1); vertical-align:middle; 
 }
 
-
-
-
-.is-next-button a .link { /* =manually placed= link text for next sectiom */
-    padding:15px; float: left;
-	border-right: 1px solid rgba(255,255,255,0.70);
+/* styling the link and arrow copy */
+.guide-next-button a .next-button-link, .guide-next-button a .next-button-arrow { 
+    /* =manually placed= link text for next sectiom */
     color: rgba(255,255,255, 0.90);
     font-family: 'Droid Sans', sans-serif;
-    text-decoration: none; 
     font-weight: 800;
     font-size:20px;
 	text-transform: uppercase;
     cursor: alias;
-}
-.is-next-button .arrow { /* directional arrow for next sectiom */
-	padding: 0px 10px; margin:0px;
-	float: left;
-	color: rgba(255,255,255, 0.90);
-	font-weight: 800;
-	font-size: 40px;
-	text-transform: uppercase;	
-	border-left: 1px solid rgba(0,0,0,0.2);
-    cursor: alias;
-}
-.is-next-button a:hover .link { /* For now I'm hovering with Convox Blue */
-    color: rgba(4,83,148, 0.7);
-    text-decoration: none; 
+    margin:0 auto;	padding: 0px 10px;
 }
 
+.guide-next-button a, .guide-next-button a:hover { text-decoration:none;}
+
+/* the button on hover  */
+button.guide-next-button:hover {
+	background: rgb(255,255,255);
+}
+
+/* the link on hover  */
+.guide-next-button a:hover .next-button-link, .guide-next-button a:hover .next-button-arrow { 
+    /* For now I'm hovering with Convox Blue */
+    color: rgba(4,83,148, 1);
+}
