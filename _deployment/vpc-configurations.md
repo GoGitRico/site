@@ -13,23 +13,48 @@ When you [install a Rack](/docs/installing-a-rack/), most of the AWS resources u
 
 By default, Convox Rack installations create a new VPC with subnets in two or three (when available) Availability Zones in your chosen AWS Region. If you'd like to install a Convox Rack into an existing VPC, we recommend allocating a /24 block subnet in each of three Availability Zones.
 
-To install a Rack into an existing VPC, you'll need to provide the VPC ID and the CIDRs of the subnets into which Convox should be installed.
+<div class="block-callout block-show-callout type-info" markdown="1">
+  Your VPC must have both the `enableDnsHostnames` and `enableDnsSupport` attributes set to `true`. These settings can also be found as **Edit DNS Hostnames** and **Edit DNS Resloution** in the **Actions** menu for your VPC in the AWS VPC web console.
+</div>
 
-    convox install \
-      --existing-vpc <VPC ID> \
-      --vpc-cidr <VPC CIDR> \
-      --subnet-cidrs <comma-separated CIDRs>
+To install a Rack into an existing VPC, you'll need to provide:
+
+* the VPC ID
+* the VPC CIDR
+* the CIDRs of the subnets into which Convox should be installed
+* the Internet Gateway ID (can be found in the AWS VPC console)
+
+```
+convox install \
+  --existing-vpc <VPC ID> \
+  --vpc-cidr <VPC CIDR> \
+  --subnet-cidrs <comma-separated CIDRs> \
+  --internet-gateway <Internet Gateway ID>
+```
 
 For example:
 
     convox install \
       --existing-vpc "vpc-abcd1234" \
       --vpc-cidr "10.0.0.0/16" \
-      --subnet-cidrs "10.0.1.0/24,10.0.2.0/24,10.0.3.0/24"
+      --subnet-cidrs "10.0.1.0/24,10.0.2.0/24,10.0.3.0/24" \
+      --internet-gateway "igw-abcd1234"
 
-### Finding the VPC ID and VPC CIDR
+### Finding the VPC ID, VPC CIDR, and Internet Gateway ID
 
-You can find your VPC ID and CIDR in the [AWS VPC console](https://console.aws.amazon.com/vpc). Navigate to "Your VPCs" and look in the "VPC ID" and "VPC CIDR" columns.
+You can find your VPC ID and CIDR in the [AWS VPC console](https://console.aws.amazon.com/vpc). Navigate to "Your VPCs" and look in the "VPC ID" and "VPC CIDR" columns. The Internet Gateway ID can also be found in the VPC console under "Internet Gateways".
+
+You can also list your VPCs using the AWS CLI:
+
+```
+$ aws ec2 describe-internet-gateways
+```
+
+Once you have the VPC ID you can use it to fetch the Internet Gateway ID:
+
+```
+$ aws ec2 describe-internet-gateways --filters "Name=attachment.vpc-id,Values=vpc-abcd1234"
+```
 
 ### Choosing suitable CIDR blocks
 
@@ -46,7 +71,8 @@ Installing a private Rack into an existing VPC requires specifying a couple more
       --existing-vpc "vpc-abcd1234" \
       --vpc-cidr "10.0.0.0/16" \
       --subnet-cidrs "10.0.1.0/24,10.0.2.0/24,10.0.3.0/24" \
-      --private-cidrs "10.0.4.0/24,10.0.5.0/24,10.0.6.0/24"
+      --private-cidrs "10.0.4.0/24,10.0.5.0/24,10.0.6.0/24" \
+      --internet-gateway "igw-abcd1234"
 
 Keep in mind that you will need to create six /24 CIDR block subnets: three public, and three private.
 

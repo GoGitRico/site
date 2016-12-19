@@ -1,5 +1,6 @@
 ---
 title: Definitions
+layout: docs
 permalink: /docs/definitions/
 ---
 

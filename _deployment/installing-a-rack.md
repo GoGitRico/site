@@ -28,7 +28,8 @@ This is the recommended method for installing a Rack.
 Run `convox install --help` to see the available command line options.
 
 <div class="block-callout block-show-callout type-info" markdown="1">
-Note: Running `convox install` automatically logs you into the newly created Rack.
+Note: Running `convox install` automatically logs you into the newly created Rack. For more information, see [Login and Authentication](/docs/login-and-authentication/).
+
 </div>
 
 To install a Rack via the CLI, run `convox install` with your desired options:
@@ -65,16 +66,17 @@ The CLI installer has some advanced options that aren't available in the web UI 
 When you install via the CLI, your CLI gets logged into the Rack at the end of a successful installation. That means all commands go straight to the Rack instead of being proxied through Console. After installing a Rack via CLI, you'll need to:
 
 - run `convox login console.convox.com` to log your CLI back into Console
-- manually add the Rack to the Console web interface (Open the **Add Rack** dropdown and select **Add Existing**)
+- manually add the Rack to the Console web interface (open the **Add Rack** dropdown and select **Add Existing**)
 
 Then you can activate the Rack by running `convox switch <org>/<rack>`.
+
+For more information, see [Login and Authentication](/docs/login-and-authentication/).
 
 ## How do I disconnect a Rack from Convox?
 
 You can unlink a Rack from Convox via the [web console](https://console.convox.com/). Click on the Rack name, then navigate to the `Settings` tab and click `Remove Rack`.
 
 This will not delete any AWS resources. To do that, see [Uninstalling Convox](/docs/uninstalling-convox/).
-
 
 ## How do I uninstall a Rack?
 

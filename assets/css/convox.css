@@ -113,6 +113,13 @@ header ul.actions li a:hover {
   color: #FFF;
 }
 
+header h3 {
+  margin-top: 5px;
+  font-size: 25px;
+  color: #CCC;
+  font-style: italic;
+}
+
 span.mono {
   font-family: 'Roboto Mono', Monaco, Consolas, monospace;
   color: #000;
@@ -1757,6 +1764,19 @@ input#mc-embedded-subscribe {
   color: aqua;
 }
 
+.docs #doc table pre {
+  background-color: #FFF;
+  border-radius: 4px;
+  color: #666;
+  font-family: 'Roboto Mono', Monaco, Consolas, monospace;
+  font-size: .9em;
+  font-weight: 300;
+  line-height: 1.2em;
+  padding: 0;
+  margin: 5px 0;
+  overflow: hidden;
+}
+
 .docs #doc img {
   border: 1px solid #eee;
   border-radius: 4px;
@@ -2161,6 +2181,30 @@ input#mc-embedded-subscribe {
   padding-top: 20px;
 }
 
+/* header hover link support */
+
+.header-link {
+  position: absolute;
+  left: -0.5em;
+  opacity: 0;
+
+  \-webkit-transition: opacity 0.2s ease-in-out 0.1s;
+  \-moz-transition: opacity 0.2s ease-in-out 0.1s;
+  \-ms-transition: opacity 0.2s ease-in-out 0.1s;
+}
+
+h2:hover .header-link {
+  opacity: 0;
+  color: red;
+}
+
+h3:hover .header-link,
+h4:hover .header-link,
+h5:hover .header-link,
+h6:hover .header-link {
+  opacity: 1;
+}
+
 /* Guide */
 
 .guide #toc li.build,
@@ -2172,4 +2216,36 @@ input#mc-embedded-subscribe {
 
 .container.automation {
 	padding: 0;
+}
+
+.guide table {
+  border-collapse: collapse;
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.guide table th, .guide table td {
+  text-align: center;
+}
+
+.guide table #dev tr, .guide table #dev td {
+  border-bottom: 1px dashed;
+}
+
+.guide table #prod tr, .guide table #prod td {
+  border-top: none;
+}
+
+.guide table.vs {
+  width: 100%;
+}
+
+.guide table.vs th, .guide table.vs td {
+  width: 50%;
+}
+
+.guide h2+h3 {
+  margin-top: -5px;
+  color: #777;
+  font-style: italic;
 }

@@ -12,7 +12,7 @@ This page describes a number of files and directories which can exist in `~/.con
 
 This file is written to every time you run `convox login`, whether you're logging into the Convox console or directly into a Rack.
 
-This file contains a json struct in the following format:
+This file contains a JSON struct in the following format:
 
 ```
 $ cat ~/.convox/auth 
@@ -32,11 +32,11 @@ If you're logged into `console.convox.com`, you can `convox switch` between all 
 
 ### `~/.convox/id`
 
-If this file exists, its contents are used as if passed to the `--email` flag during `rack install`.
+If this file exists, its contents are used as if passed to the `--email` flag during `convox install`.
 
-It can be overridden by setting the `CONVOX_EMAIL` environment variable.
+It can be overridden by setting the [`CONVOX_EMAIL` environment variable](/docs/cli-environment-variables/).
 
-The ID is for metrics and for the name of the CloudFormation stack.
+The ID is used for metrics and as the name of the CloudFormation stack.
 
 If not provided, a randomly generated string will be used.
 

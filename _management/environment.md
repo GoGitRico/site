@@ -81,6 +81,14 @@ services:
       - FOO=default   # override with `convox env set FOO=newvalue`
 ```
 
+## Scope
+
+Environment variables set via `convox env` are considered app-level configuration.
+
+There isn't currently a way to set an environment variable for a whole cluster rather than just a single app.
+
+You can set environment variables at the [service](https://convox.com/docs/definitions/#service) level in `docker-compose.yml`.
+
 ## Sensitive Information
 
 Since `docker-compose.yml` will typically be under version control, we recommend not setting sensitive default values there.

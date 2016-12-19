@@ -1,0 +1,48 @@
+<script>
+$(function() {
+  return $("h2, h3, h4, h5, h6").each(function(i, el) {
+    var $el, icon, id;
+    $el = $(el);
+    id = $el.attr('id');
+    icon = '<i class="fa fa-link"></i>';
+    if (id) {
+      return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
+    }
+  });
+});
+</script>
+
+<footer class="text-left"> 
+  <div class="footer-bottom"> 
+    <div class="container"> 
+      <div class="row"> 
+        <div class="col-xs-12 col-sm-6"> 
+          © 2016 Convox, Inc. 
+          <br /> 
+          <a href="/legal/privacy">Privacy Policy</a> | 
+          <a href="/jobs">Jobs</a> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</footer> 
+
+<script src="/assets/js/jquery.js"></script> 
+<script src="/assets/js/bootstrap.min.js"></script> 
+<script src="/assets/js/jquery.easing.1.3.min.js"></script> 
+<script src="/assets/js/classie.js"></script> 
+
+{% if jekyll.environment != 'development' %} 
+  {% include facebook.html %} 
+  {% include intercom.html %} 
+  {% include segment.html %} 
+  
+  <script> 
+    $('.js-intercom-show').click(function () { 
+      Intercom('show'); 
+      return false; 
+    }); 
+
+    analytics.trackLink($('a.cta'), function(e) { return "clicked " + e.id })
+  </script> 
+{% endif %} 

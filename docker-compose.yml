@@ -5,8 +5,8 @@ web:
   ports:
     - 80:4001
     - 443:4001
-  command:
-    - _bin/web
   environment:
     - DEVELOPMENT
     - JEKYLL_ENV
+  command:
+    - _bin/web

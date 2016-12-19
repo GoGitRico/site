@@ -67,7 +67,9 @@ Use these labels to configure load balancer behavior on specific ports.
 
 See our [load balancer documentation](/docs/load-balancers) for more.
 
-## convox.start
+## convox.start.shift
+
+_See also: [the `--shift` flag](/docs/running-locally/#shifting-ports)_
 
 Use the `convox.start.shift` label to offset the external ports of processes run by `convox start` by a given number. This allows multiple applications to run on one host without conflicts. A container configured to listen on host ports 80 and 443 could be shifted to listen on ports 1080 and 1443 with the following configuration:
 

@@ -6,16 +6,15 @@ echo "DEVELOPMENT: $DEVELOPMENT"
 
 if [ "$DEVELOPMENT" == "true" ]; then
     export JEKYLL_ENV=development
-    $(bundle exec jekyll serve \
-        --verbose \
+    bundle exec jekyll serve \
         --incremental \
         -H 0.0.0.0 \
         -P 5000 \
         --force_polling \
-        --watch) "$@"
+        --watch "$@"
 else
     export JEKYLL_ENV=production
-    $(bundle exec jekyll serve \
+    bundle exec jekyll serve \
         -H 0.0.0.0 \
-        -P 5000) "$@"
+        -P 5000 "$@"
 fi

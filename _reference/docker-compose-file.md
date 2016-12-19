@@ -44,7 +44,7 @@ Select a key for more information and example usage.
         - convox.port.443.proxy=true
       <a href="#links">links</a>:
         - database
-      <a href="#memory-limit">mem_limit</a>: 1024
+      <a href="#memory-limit">mem_limit</a>: 1024MB
       <a href="#ports">ports</a>:
         - 80:4000
         - 443:4001
@@ -218,17 +218,17 @@ Convox currently supports a single use (via `convox start`) of the `networks` co
 
 ### Memory Limit
 
-Amount of memory, in MB, available to the specified process type.
+Amount of memory, in bytes, available to the specified process type.
 
 This can be specified for the initial deployment in `docker-compose.yml`:
 
-    mem_limit: 256
+    mem_limit: 256MB
 
 Or by running `convox scale` (see also [Scaling](https://convox.com/docs/scaling/)):
 
     convox scale <process> --memory=256
 
-Minimum is 4 MB.
+Minimum is 4 MB. If no unit label (e.g. `MB`) is provided, the amount is interpreted in bytes.
 
 Note:
 

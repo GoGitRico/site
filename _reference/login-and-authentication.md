@@ -20,9 +20,11 @@ Since Console is a proxy for a Rack, Console stores the encrypted original Rack 
 
 ### How do I log out (or switch accounts) using the CLI?
 
-When we talk about being "logged in" means that `~/.convox/auth` contains the hostname in `~/.convox.host` along with the corresponding Console or Rack API key (referred to in some places as a "Rack password").
+Being "logged in" simply means that `~/.convox/auth` contains the hostname in `~/.convox/host` along with the corresponding Console or Rack API key (referred to in some places as a "Rack password").
 
 In other words: if `auth` contains the correct hostname + API key pair corresponding to the hostname in `host`, then you're "logged in."
+
+To switch accounts, run `convox login console.convox.com --password=CONVOX_API_KEY`, replacing `CONVOX_API_KEY` with your user API key, which can be regenerated in [your Convox account settings](https://console.convox.com/grid/user/profile).
 
 ## See also
 

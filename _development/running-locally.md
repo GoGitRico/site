@@ -17,7 +17,7 @@ Install Docker from your application's default package manager.
 
 ## Starting the Application
 
-#### convox start
+### convox start
 
 Use `convox start` to build and run your application locally.
 
@@ -38,9 +38,63 @@ Use `convox start` to build and run your application locally.
 
 This will read your `docker-compose.yml` and use the information found there to boot all of your app's processes and apply configured [links](/docs/linking). Local code changes will be [synced](/docs/code-sync) with your running processes in real time.
 
-To exit `convox start` press `Ctrl+C`.
+To exit `convox start` gracefully, press `Ctrl+C`. To force-quit, press `Ctrl+C` again.
 
-## Environment
+### File syncing
+
+Local code changes will be [synced](/docs/code-sync) with your running processes in real time. To disable this, pass the `--no-sync` flag to `convox start`.
+
+### Caching
+
+Your app is rebuilt each time you run `convox start`, which takes advantages of Docker's built-in caching mechanism by default. To bypass the cache and rebuild from scratch, you can pass the `--no-cache` flag to `convox start`.
+
+### Shifting ports
+
+You can offset the external ports of processes run by `convox start` by a given number, allowing you to easily run multiple applications on one host without port conflicts.
+
+There are two ways to accomplish this: via the `--shift` flag, or via service labels.
+
+#### `convox start --shift`
+
+Passing the `--shift` flag to `convox start` will offset the public ports of all services by the provided number. For example, on an app that normally publishes port 80, running `convox start --shift 1` will publish port 81 instead, and update any corresponding port environment variables (`SERVICENAME_PORT`, etc) and container names.
+
+```
+$ convox start
+ERROR: ports in use: [80 443]
+```
+
+```
+$ convox start --shift 1
+build  │ running: docker build -f /home/aj/git/convox/site/Dockerfile -t site-staging/web /home/aj/git/convox/site
+Sending build context to Docker daemon 19.95 MB 557.1 kB
+[...]
+web    │   Server running... press ctrl-c to stop.
+```
+
+#### `convox.start.shift` label
+
+You can make this port shifting more persistent on a per-service basis with the [convox.start.shift](/docs/docker-compose-labels/#convoxstart) label in `docker-compose.yml`:
+
+```
+  labels:
+    - convox.start.shift=2
+```
+
+When shifting ports, you can view the differences with `docker ps` (ports `81` and `444` as opposed to `80` and `443`):
+
+```
+$ docker ps
+IMAGE               COMMAND                  PORTS                                              NAMES
+convox/proxy        "proxy-link 444 4001 "   0.0.0.0:444->444/tcp                               site-staging-web-proxy-444
+convox/proxy        "proxy-link 81 4001 t"   0.0.0.0:81->81/tcp                                 site-staging-web-proxy-81
+site-staging/web    "_bin/web"               0.0.0.0:32788->4001/tcp, 0.0.0.0:32789->4001/tcp   site-staging-web
+```
+
+Your app will then be available at `http://0.0.0.0:81`.
+
+Note: The `--shift` and `convox.start.shift` label values are cumulative. If you have services `x` and `y`, and you define `convox.start.shift=1000` for the `x` service and then run `convox start --shift 2000`, service `x` will have its ports shifted by `3000` and service `y` will have its ports shifted by `2000`.
+
+### Environment
 
 `convox start` will read variables defined in a file called `.env` in the project root directory. For more information, see the [Environment](/docs/environment/#local) documentation.
 
@@ -58,3 +112,7 @@ database:
 ```
 
 Convox does not recommend running datastores as containers in your Rack. Instead, you should use a hosted service, such as the [Postgres](/docs/postgresql) resource that Convox configures using Amazon RDS, or externally-hosted resources like [Compose.io's MongoDB](https://www.compose.com/mongodb). For more information, see [Resources](/docs/about-resources/).
+
+## Troubleshooting
+
+If you encounter errors or unexpected behaviors when running `convox start`, try running `convox doctor` to check your app for problems.
