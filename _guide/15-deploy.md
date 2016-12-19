@@ -35,11 +35,7 @@ Let’s start by [installing a Rack](/guide/rack/)
 
 <section>
 <div id="container-next-button">
-    <button class="guide-next-button">
-	<a href="/guide/rack">
-    <span class="next-button-link">Installing a Rack</span>
-    <span class="next-button-arrow">&#8680;</span>
-    </a>
-    </button>
+    <h4>Next Up</h4>
+    <a title="Installing a Rack" href="/guide/rack" class="btn btn-primary" role="button">Installing a Rack &nbsp; &nbsp; &#8680;</a>
 </div>
 </section>

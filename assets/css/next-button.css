@@ -11,46 +11,29 @@ Next Button Is RICO
 	background: rgba(255,255,255,0.3); /* Convox blue */
 	padding: 20px 0px;
 	border-radius: 10px;
-    cursor: alias;
 }
 
-/* for an =up next= wording above button if desired
+/* for an =up next= wording above button if desired */
 #container-next-button h4 {
     color: #444444;
-    padding-right:65px;
-} */
+    text-align:center;
+}
 
 /* the next button itself */
-button.guide-next-button {
-	-webkit-border-radius: 11px;
-	-moz-border-radius: 11px;
-	border-radius: 11px;
-	padding:7px;
-	border: 1px solid rgba(4,83,148, 1);
-	background: rgba(4,83,148, 1); vertical-align:middle; 
-}
-
-/* styling the link and arrow copy */
-.guide-next-button a .next-button-link, .guide-next-button a .next-button-arrow { 
-    /* =manually placed= link text for next sectiom */
-    color: rgba(255,255,255, 0.90);
+.btn-primary {
+    width:100%;
+    white-space:pre;
+    color:rgba(255,255,255,1) !important;
     font-family: 'Droid Sans', sans-serif;
     font-weight: 800;
+    text-transform: uppercase;
     font-size:20px;
-	text-transform: uppercase;
-    cursor: alias;
-    margin:0 auto;	padding: 0px 10px;
-}
-
-.guide-next-button a, .guide-next-button a:hover { text-decoration:none;}
-
-/* the button on hover  */
-button.guide-next-button:hover {
-	background: rgb(255,255,255);
 }
 
 /* the link on hover  */
-.guide-next-button a:hover .next-button-link, .guide-next-button a:hover .next-button-arrow { 
+.gbtn-primary:hover { 
     /* For now I'm hovering with Convox Blue */
-    color: rgba(4,83,148, 1);
+    color: rgba(4,83,148, 1) !important;
+    background: rgb(255,255,255);
 }
+
